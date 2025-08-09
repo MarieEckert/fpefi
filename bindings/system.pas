@@ -52,17 +52,6 @@ type
 	PUInt64	= ^UInt64;
 
 	UTF8String = type AnsiString(CP_UTF8);
-  PAnsiRec = ^TAnsiRec;
-  TAnsiRec = Record
-    CodePage    : Word;
-    ElementSize : Word;
-{$ifdef CPU64}	
-    { align fields  }
-	Dummy       : DWord;
-{$endif CPU64}
-    Ref         : UInt64;
-    Len         : UInt64;
-  end;
 
 	jmp_buf = packed record
 		rbx, rbp, r12, r13, r14, r15, rsp, rip: QWord;
